@@ -1,0 +1,123 @@
+.item {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  min-height: 24px;
+  padding: 4px 14px 3px 14px;
+}
+
+.item__dnd {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.item:hover .item__dnd{
+  width: 24px;
+  height: 24px;
+  background-image: url(../icon.png);
+  background-color: transparent;
+  background-position: 0 -96px;
+}
+
+.item:hover .item__dnd:hover {
+  background-position: -24px -96px;
+  cursor:move;
+}
+
+.item__check {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  background-image: url(../icon.png);
+  background-color: transparent;
+  background-position: 0 0;
+}
+
+.item__check:hover {
+  background-position: -24px 0;
+}
+
+.item__check.check{
+  background-position: 0 -24px;
+}
+
+.item__check.check:hover {
+  background-position: -24px -24px;
+}
+
+
+.item__content {
+  line-height: 24px;
+  flex-grow: 1;
+  align-self: flex-start;
+  font-size: 14px;
+  text-align: left;
+  border:none;
+  background-color: transparent;
+  resize: none;
+  overflow: hidden;
+  pointer-events: auto !important;
+}
+
+.item__content.check {
+  text-decoration: line-through;
+}
+
+.item__content:focus {
+  border:none;
+  outline: none;
+  text-decoration: underline;
+}
+
+.item__delete {
+  visibility: hidden;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-image: url(../icon.png);
+  background-position: 0 -72px;
+  background-color: transparent;
+}
+
+.item:hover .item__delete {
+  visibility: visible;
+}
+
+.item:hover .item__delete:hover {
+  background-position: -24px -72px;
+  cursor: pointer;
+}
+
+.item__delete:active {
+  outline: none;
+  border: none;
+}
+
+
+
+
+.item-transition-enter {
+  max-height: 0;
+  opacity: 0.01;
+}
+
+.item-transition-enter.item-transition-enter-active {
+  max-height: 150px;
+  opacity: 1;
+  transition: max-height 200ms ease-in, opacity 200ms ease-in;
+}
+
+.item-transition-exit {
+  max-height: 150px;
+  opacity: 1;
+}
+
+.item-transition-exit.item-transition-exit-active {
+  max-height: 0;
+  opacity: 0.01;
+  transition: max-height 200ms ease-in, opacity 200ms ease-in;
+}
